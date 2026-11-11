@@ -2,10 +2,41 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Intercare Verify</title>
+<title>Autencefy Verify</title>
+<style>
+body{font-family:sans-serif;background:#111;color:#eee;display:flex;height:100vh;align-items:center;justify-content:center;margin:0}
+.box{text-align:center;padding:30px;border:1px solid #333;border-radius:10px;background:#1a1a1a}
+input{padding:10px;font-size:16px;border-radius:5px;border:1px solid #555;background:#222;color:#fff;width:150px;text-align:center}
+button{margin-top:15px;padding:10px 25px;font-size:16px;background:#1a73e8;color:#fff;border:none;border-radius:5px}
+#result{margin-top:20px;display:none}
+</style>
 </head>
-<body style="font-family:sans-serif;text-align:center;padding:40px">
-<h1>Intercare Verify</h1>
-<p>Welcome to Intercare Verify.</p>
+<body>
+<div class="box">
+<h2>Autencefy Verify</h2>
+<div id="loginBox">
+<p>Enter PIN:</p>
+<input type="password" id="pin" maxlength="6">
+<br>
+<button onclick="checkPin()">OK</button>
+<p id="error" style="color:#f55;display:none">Incorrect PIN</p>
+</div>
+<div id="result">
+<h3>Verified</h3>
+<p>This confirms the document is valid.</p>
+</div>
+</div>
+<script>
+const correctPin = "1234"; // change this
+function checkPin(){
+  const entered = document.getElementById('pin').value;
+  if(entered === correctPin){
+    document.getElementById('loginBox').style.display = 'none';
+    document.getElementById('result').style.display = 'block';
+  } else {
+    document.getElementById('error').style.display = 'block';
+  }
+}
+</script>
 </body>
 </html>
