@@ -4,11 +4,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Autencefy Verify</title>
 <style>
-body{font-family:sans-serif;background:#111;color:#eee;display:flex;height:100vh;align-items:center;justify-content:center;margin:0}
-.box{text-align:center;padding:30px;border:1px solid #333;border-radius:10px;background:#1a1a1a}
+body{font-family:sans-serif;background:#111;color:#eee;display:flex;min-height:100vh;align-items:center;justify-content:center;margin:0;padding:20px 0}
+.box{text-align:center;padding:30px;border:1px solid #333;border-radius:10px;background:#1a1a1a;max-width:500px;width:90%}
 input{padding:10px;font-size:16px;border-radius:5px;border:1px solid #555;background:#222;color:#fff;width:150px;text-align:center}
 button{margin-top:15px;padding:10px 25px;font-size:16px;background:#1a73e8;color:#fff;border:none;border-radius:5px}
-#result{margin-top:20px;display:none}
+#result{margin-top:20px;display:none;text-align:left}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+td{border:1px solid #333;padding:12px;font-size:15px}
+td.label{font-weight:bold;width:40%;background:#222}
 </style>
 </head>
 <body>
@@ -22,8 +25,15 @@ button{margin-top:15px;padding:10px 25px;font-size:16px;background:#1a73e8;color
 <p id="error" style="color:#f55;display:none">Incorrect PIN</p>
 </div>
 <div id="result">
-<h3>Verified</h3>
-<p>This confirms the document is valid.</p>
+<h3 style="text-align:center">Autencefy Academy</h3>
+<table>
+<tr><td class="label">School</td><td>Autencefy</td></tr>
+<tr><td class="label">Instructor</td><td></td></tr>
+<tr><td class="label">Student</td><td></td></tr>
+<tr><td class="label">Test Date</td><td></td></tr>
+<tr><td class="label">Location</td><td></td></tr>
+<tr><td class="label">Result</td><td></td></tr>
+</table>
 </div>
 </div>
 <script>
@@ -32,11 +42,3 @@ function checkPin(){
   const entered = document.getElementById('pin').value;
   if(entered === correctPin){
     document.getElementById('loginBox').style.display = 'none';
-    document.getElementById('result').style.display = 'block';
-  } else {
-    document.getElementById('error').style.display = 'block';
-  }
-}
-</script>
-</body>
-</html>
