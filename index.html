@@ -42,3 +42,11 @@ function checkPin(){
   const entered = document.getElementById('pin').value;
   if(entered === correctPin){
     document.getElementById('loginBox').style.display = 'none';
+    document.getElementById('result').style.display = 'block';
+  } else {
+    document.getElementById('error').style.display = 'block';
+  }
+}
+</script>
+</body>
+</html>
